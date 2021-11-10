@@ -24,7 +24,6 @@ console.log(" 3 - Carne – 15 segundos");
 console.log(" 4 - Feijão – 12 segundos"); 
 console.log(" 5 - Brigadeiro – 8 segundos"); 
 
-
 let pipoca = 10;
 let macarrao = 8;
 let carne = 15;
@@ -117,7 +116,6 @@ function iniciarMicro(opcao,tempo){
         default:
             console.log('Prato inexistente'); 
 
-    
  }
 }
 /*  let pipoca = 10; */
