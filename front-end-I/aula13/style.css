@@ -42,7 +42,6 @@ button{
 
 }
 
-
 button:hover{
     transition: 1s;
     background-color: blue;
