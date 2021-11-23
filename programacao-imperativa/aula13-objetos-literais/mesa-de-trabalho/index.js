@@ -48,25 +48,31 @@ let conta10 = new Conta(2138105881,"Conta Poupança", 33196, "Bendite Huggett");
 4.	A partir dos 10 usuários, gereuma lista onde todos eles convergem (lista de objetos)
 */
 const Clientes = [conta1,conta2,conta3,conta4,conta5,conta6,conta7,conta8,conta9,conta10];
-//console.log(Clientes);
+//console.log(typeof Clientes);
+
 /*
 5.	Também nos pedem a criação de um objeto literal chamado banco que terá uma propriedade chamada clientes, ele será composto pela lista de objetos gerados no ponto anterior.*/
-let banco = {
-    clientes: Clientes,
-    consultarCliente: function(titular){
 
-        for(var x=0; x>this.clientes.length; x++) 
-        {      
-            console.log("teste");
-        }   
-       
-        return this.clientes.length;
-    }
-}
-console.log(banco.consultarCliente("Bendite Huggett"));
 /*
 6.	o objeto do banco criará um método chamado consultarCliente que receberá um nome (titular) por parâmetro e deve pesquisar na lista de contas e retornar ao objeto do cliente que corresponde a esse nome inserido.*/
 
+let banco = {
+    clientes: Clientes,
+    consultarCliente: function(titular){
+        cliente = "Cliente Não Encontrado";
+        Object.keys(this.clientes).forEach((key) => {
+            //console.log (this.clientes[key].titular +" == " + titular);
+            if((this.clientes[key].titular) === titular){
+               cliente = this.clientes[key];
+               
+            }
+            //console.log(key); //column01...
+            //console.log(this.clientes[key].titular); //Coluna 01...
+        });
+        return cliente;
+    }
+}
+console.log(banco.consultarCliente("Lonnie Verheijdens"));
 
 /*
 7.	Crie outro método chamado depósito que receberá como parâmetros, o titular da conta e uma quantidade de dinheiro para depositar. O método deve chegar à conta correspondente e, em seguida, adicionar a quantidade de dinheiro para depositar o saldo da conta, então você deve dar um aviso pelo console com a mensagem "Depósito realizado, seu novo saldo é: xxx" .*/
