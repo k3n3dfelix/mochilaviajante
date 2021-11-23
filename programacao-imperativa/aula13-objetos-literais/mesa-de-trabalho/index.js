@@ -59,6 +59,7 @@ const Clientes = [conta1,conta2,conta3,conta4,conta5,conta6,conta7,conta8,conta9
 let banco = {
     clientes: Clientes,
     consultarCliente: function(titular){
+        
         cliente = "Cliente Não Encontrado";
         Object.keys(this.clientes).forEach((key) => {
             //console.log (this.clientes[key].titular +" == " + titular);
