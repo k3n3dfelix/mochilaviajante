@@ -23,10 +23,10 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-color: black; 
-    width: 100%;
+    /* background-color: black; */
+    /* width: 100%;
     height: 100%;
-    position: absolute; 
+    position: absolute; */
 }
 h1 {
     font-family: 'Zen Kurenaido', sans-serif;
@@ -89,35 +89,40 @@ img {
     border-radius: 10px;
 }
 
-/* ------------------------------------------------------------- */
+/* ---------------------------------------------------------------------- */
 form {
     padding: 20px;
-    color: rgb(19, 19, 19);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-
-label, input,textarea, select{
-    display:flex;
-    flex-direction: column;
+.titulo-conv{
+    display:block;
+}
+label, input,textarea,select {
+    display:block;
     margin-bottom:10px;
     border-radius:5px;
     font-family: roboto;
     font-weight: bold;
 }
+
 .checkbox {
     display: flex;
     gap: 15px;
-    color: beige;
 }
 
-fieldset {
+ fieldset {
+    display: flex;
     border: none;
     font-family: roboto; 
-    color: rgb(2, 2, 2);
 }
-
+button:hover {
+    background-color: rgb(224, 159, 159);
+}
+button {
+    width: 100px;
+    padding: 10px;
+    border-radius: 10%;
+    margin-right: 10px;
+}
 legend {
     padding-bottom: 10px;
 }
@@ -126,66 +131,21 @@ input, select {
 	border: none;
 	padding: 6px 24px;
 	border-radius: 12px;
+	transition: 1s;
 	font-weight: bold;
 	outline: 0;
- 
 }
 select {
     margin-bottom: 20px;
 }
-.enviar{
-    color: rgb(15, 6, 6);
-    background-color:#34eb3a;
-    border: none;
-    padding: 6px 24px;
-    border-radius: 12px;
-    transition: 0.4s;
-    font-weight: bold;
+
+label{
+    color:white;
 }
-.enviar:hover {
-    background-color: #19801d;
-   
-}
-.limpar{
-    color: rgb(15, 6, 6);
-    background-color:#db4f4f;
-    border: none;
-    padding: 6px 24px;
-    border-radius: 12px;
-    transition: 0.4s;
-    font-weight: bold;
-}
-.limpar:hover {
-    background-color: #9c0e0e;
-    
-}
-legend {
-    color: beige;
-}
-input[type="text"]:hover{
-    border: 1px solid #999;
-    border-radius: 5px;
-    transform: scale(1.1);
-}
-input[type="email"]:hover{
-    border: 1px solid #999;
-    border-radius: 5px;
-    transform: scale(1.1);
-}
-input[type="date"]:hover{
-    border: 1px solid #999;
-    border-radius: 5px;
-    transform: scale(1.1);
-}
-.tituloForm {
-     color: black;
-}
-input[type="date"] {
-    width: 200px;
-}
-option {
-    font-size: 14px;
-}
-legend {
-    color: black ;
+
+.form{
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    opacity:0.8;
 }
