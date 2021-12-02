@@ -114,5 +114,56 @@ function moverZeros(array){
     array_final = novo_array.concat(array_zero);
     return array_final;
 }
+//console.log(moverZeros(array));
 
-console.log(moverZeros(array));
+ /*7) - Lidando com dois arrays
+Você deve criar uma função chamada arrayHandler que receba dois arrays de igual tamanho como parâmetros e exiba no console: "Eu sou {elemento do array 1} e eu sou {elemento do array 2}".
+Exemplo:
+arrayHandler([1,2,3], [“o”,”l”,”á”]) deve mostrar: 
+Eu sou 1 e eu sou o
+Eu sou 2 e eu sou l
+Eu sou 3 e eu sou á*/
+
+function arrayHandler(array1,array2){
+    for(i=0;i<array1.length;i++){
+        console.log("Eu Sou "+array1[i]+" e eu sou "+array2[i])
+    }
+}
+
+array1 = [1,2,3];
+array2 = ["o","l","á"];
+//arrayHandler(array1,array2);
+
+/*8) - Arrays de objetos
+Você deve criar uma função chamada arrayObjects que receba um número como parâmetro e retorne um array de objetos que tem uma propriedade chamada valor que contém o valor do número e seus anteriores.
+Exemplo:
+arrayObjects(5) deve retornar [{valor: 1}, {valor: 2}, {valor: 3}, {valor: 4}, {valor: 5}]
+arrayObjects(3) deve retornar [{valor: 1}, {valor: 2}, {valor: 3}]
+*/
+
+function arrayObjects(numero){
+    newArray = [];
+    for(i=1;i<=numero;i++){
+        newArray.push("{valor: "+i+"}");
+    }
+    return newArray;
+}
+
+//console.log(arrayObjects(5));
+
+/*9) - Arrays de objetos 2
+Você deve criar uma função chamada arrayObjectsTwo que recebe um número e uma palavra como parâmetro e retorna um array de objetos que possui: uma propriedade nomeada pela palavra passada por parâmetro e o valor dessa propriedade deve ser o número passado por parâmetro e seus anteriores.
+Exemplo:
+arrayObjectsTwo(5, “olá”) deve retornar [{olá: 1}, {olá: 2}, {olá: 3}, {olá: 4}, {olá: 5 }]
+arrayObjectsTwo(3, “tchau”) deve retornar [{tchau: 1}, {tchau: 2}, {tchau: 3}]
+*/
+
+function arrayObjects(numero){
+    newArray = [];
+    for(i=1;i<=numero;i++){
+        newArray.push("{olá: "+i+"}");
+    }
+    return newArray;
+}
+
+console.log(arrayObjects(5));
