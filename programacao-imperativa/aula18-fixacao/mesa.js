@@ -158,12 +158,12 @@ arrayObjectsTwo(5, “olá”) deve retornar [{olá: 1}, {olá: 2}, {olá: 3}, {
 arrayObjectsTwo(3, “tchau”) deve retornar [{tchau: 1}, {tchau: 2}, {tchau: 3}]
 */
 
-function arrayObjects(numero){
+function arrayObjects(numero,palavra){
     newArray = [];
     for(i=1;i<=numero;i++){
-        newArray.push("{olá: "+i+"}");
+        newArray.push("{"+palavra+": "+i+"}");
     }
     return newArray;
 }
 
-console.log(arrayObjects(5));
+console.log(arrayObjects(5,"ok"));
