@@ -1,3 +1,4 @@
+
 let json_pessoas = [
     {
       altura: 1.92,
@@ -177,7 +178,7 @@ let json_pessoas = [
 // }
 
 // console.log(pessoa.consultarCliente("1"));
-
+//______________________________________________________________________________________
 function maiorAltura(){
     let maior =0;
     Pessoas.forEach((pessoa) => {
@@ -185,8 +186,6 @@ function maiorAltura(){
       });
       return maior;
 }
-
-
 
 function menorAltura(){
     let menor = 0;
@@ -196,21 +195,62 @@ function menorAltura(){
       });
       return menor;
 }
+console.log("Maior Altura "+ menorAltura());
+console.log("Menor Altura "+maiorAltura());
 
-console.log(maiorAltura());
-console.log(menorAltura());
+function menor(){
+    let alturas = Pessoas.map(function(pessoa){
 
+        return pessoa.altura;
+    })
+    var menor = Math.min(...alturas);
 
+    return menor;
+}
 
+//console.log(menor(Pessoas));
 
+function maior(){
+    let alturas = Pessoas.map(function(pessoa){
+
+        return pessoa.altura;
+    })
+    var maior = Math.max(...alturas);
+    return maior;
+}
+
+//____________________________________________________________________________________
 // a média de altura das mulheres;
-
-// let total = Pessoas.reduce(function(acumulador,item){
-//     console.log(acumulador,item)
-//     return acumulador+item;
+// let filtro = Pessoas.filter(function(sexo){
+//     return Pessoas.sexo === "F";
 // });
+// console.log(filtro);
 
+function mediaAlturaM(){
+    let alturas = Pessoas.map(function(pessoa){
+        if(pessoa.sexo === "F"){
+            return Number(pessoa.altura);
+        }
+    })
+    let array = alturas.filter(function(item){
+        return Number(item);
+    });
+   
+    let total = array.reduce(function(acumulador,item){
+        
+        return acumulador+item;
+    });
+    return total / array.length;
+}
 
+console.log("Media Altura Mulheres "+ mediaAlturaM());
+
+let total = Pessoas.reduce(function(acumulador,item){
+   // console.log(acumulador,item)
+    return acumulador+item;
+});
+//___________________________________________________________________________________
+// o número de homens.
 
 
 

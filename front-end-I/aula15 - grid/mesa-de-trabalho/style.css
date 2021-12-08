@@ -6,7 +6,6 @@
     box-sizing:border-box;
     font-family: 'Open Sans', sans-serif;
     outline:0;
-
 }
 
 body{
@@ -46,11 +45,10 @@ aside{
 aside li{
     padding: 20px;
 }
+
 main{
     background-color: white;
     grid-area:main-content;
-    
-   
 }
 main h1{
     text-align: center;
