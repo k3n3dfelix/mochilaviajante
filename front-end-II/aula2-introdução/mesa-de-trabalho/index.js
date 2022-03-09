@@ -23,30 +23,48 @@ function verificarTipo(numero){
     }
     return numero;
 }
-function verificaGanhador(opcaoUsuario, opcaoMaquina){
-    if(){
-
-    }else if(){
-
+function verificaGanhador(opcaoUsuarioNome, opcaoMaquinaNome, contador){
+    if(opcaoUsuarioNome == "Pedra" && opcaoMaquinaNome == "Papel"){
+        alert("Você Perdeu");
+    }else if(opcaoUsuarioNome == "Pedra" && opcaoMaquinaNome == "Tesoura"){
+        alert("Voçe Ganhou");
+    } else if(opcaoUsuarioNome == "Papel" && opcaoMaquinaNome == "Pedra"){
+        alert("Voçe Ganhou");
+    }else if(opcaoUsuarioNome == "Papel" && opcaoMaquinaNome == "Tesoura"){
+        alert("Você Perdeu");
+    }else if(opcaoUsuarioNome == "Tesoura" && opcaoMaquinaNome == "Pedra"){
+        alert("Você Perdeu");
+    }else if(opcaoUsuarioNome == "Tesoura" && opcaoMaquinaNome == "Papel"){
+        alert("Você Ganhou");
     }else{
-
+        alert("Empatou");
     }
 }
+
 opcaoUsuario = iniciaJogo();
 switch (opcaoUsuario) {
     case 1:
         opcaoMaquina = getRandomArbitrary();
         opcaoMaquinaNome = verificarTipo(opcaoMaquina);
+        opcaoUsuarioNome = verificarTipo(opcaoUsuario);
         alert("Voçe escolheu = Pedra, a máquina = " + opcaoMaquinaNome);
-        verificaGanhador(opcaoUsuario,opcaoMaquina);
+        verificaGanhador(opcaoUsuarioNome,opcaoMaquinaNome);
         break;
     case 2:
-        alert(opcaoUsuario);
+        opcaoMaquina = getRandomArbitrary();
+        opcaoMaquinaNome = verificarTipo(opcaoMaquina);
+        opcaoUsuarioNome = verificarTipo(opcaoUsuario);
+        alert("Voçe escolheu = "+opcaoUsuarioNome +", a máquina = " + opcaoMaquinaNome);
+        verificaGanhador(opcaoUsuarioNome,opcaoMaquinaNome);
         break;
     case 3:
-     alert(opcaoUsuario)
+        opcaoMaquina = getRandomArbitrary();
+        opcaoMaquinaNome = verificarTipo(opcaoMaquina);
+        opcaoUsuarioNome = verificarTipo(opcaoUsuario);
+        alert("Voçe escolheu = "+opcaoUsuarioNome +", a máquina = " + opcaoMaquinaNome);
+        verificaGanhador(opcaoUsuarioNome,opcaoMaquinaNome);
       break;
     default:
-      alert(`Desculpe voçe deve escolher um numero entre as opçãoes informadas`);
-      iniciaJogo();
+        alert(`Desculpe voçe deve escolher um numero entre as opçãoes informadas`);
+        iniciaJogo();
   }
