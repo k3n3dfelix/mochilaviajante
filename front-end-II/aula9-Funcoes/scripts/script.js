@@ -57,6 +57,22 @@ let somarArrow2 = (valorA , valorB) => valorA + valorB;
 somarArrow2(10,10);
 
 
+function executaCalculo(){
+    let valor1 = 4;
+    let valor2 = 6;
+
+    let soma = valor1+valor2;
+
+    return soma;
+}
+
+function exibeResultadoSoma(resultado){
+    console.log(`O resultado 2 foi ${resultado}`);
+}
+
+exibeResultadoSoma(executaCalculo());
+
+
 
 
 
