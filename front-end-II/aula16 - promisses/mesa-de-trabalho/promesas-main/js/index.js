@@ -70,7 +70,7 @@ let consultandoBaseDeDados = new Promise((resolve, reject) => {
         } else {
             resolve(baseDeDados);
         }
-    }, 2000);
+    }, 10000);
 
 });
 
