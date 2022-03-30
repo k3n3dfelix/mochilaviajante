@@ -90,19 +90,16 @@ consultandoBaseDeDados
     });
 
 function renderizarDadosUsuario(dados) {
-    console.log(dados[0].nome.primeiro);
+  console.log(dados[0].imagem.grande);
     
-    
-
     let novaDiv = ` 
-   
-            <p class="card-title">${dados[0].nome.primeiro}</p>
-         
+            <img class="img-foto" src="${dados[0].imagem.grande}"></img>
+            <h1>${dados[0].nome.titulo} ${dados[0].nome.primeiro} ${dados[0].nome.utlimo}</h1>
           `;
-
     let cards_geral = document.getElementById('tarjeta');
     cards_geral.innerHTML += novaDiv;
     cards_geral.appendChild(novaDiv);
+
     /* -------------------------------- TAREFAS -------------------------------- */
     // Aqui  devem desenvolver uma função que é exibida na tela:
     // a foto, o nome completo do usuário e seu e-mail.

@@ -23,11 +23,16 @@ h1{
   margin: 20px 0;
 }
 
-.tarjeta{
+#tarjeta{
   background-color: white;
   border-radius: 20px;
   margin: 0 auto;
   height: 200px;
   width: 50%;
   max-width: 400px;
+}
+
+.img-foto{
+  align:center;
+  border-radius:20px;
 }
