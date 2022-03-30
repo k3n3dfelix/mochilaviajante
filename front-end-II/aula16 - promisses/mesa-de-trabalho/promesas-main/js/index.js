@@ -70,7 +70,7 @@ let consultandoBaseDeDados = new Promise((resolve, reject) => {
         } else {
             resolve(baseDeDados);
         }
-    }, 10000);
+    }, 2000);
 
 });
 
@@ -80,7 +80,7 @@ consultandoBaseDeDados
         
         let usuarioObjetoJson = JSON.stringify(resposta.resultado);
         let json = JSON.parse(usuarioObjetoJson);
-        
+        //console.log(json);
         renderizarDadosUsuario(json);
 
     }).then(
@@ -90,7 +90,8 @@ consultandoBaseDeDados
     });
 
 function renderizarDadosUsuario(dados) {
-  console.log(dados[0].imagem.grande);
+
+   //console.log(dados[0]);
     
     let novaDiv = ` 
             <img class="img-foto" src="${dados[0].imagem.grande}"></img>
@@ -98,7 +99,7 @@ function renderizarDadosUsuario(dados) {
           `;
     let cards_geral = document.getElementById('tarjeta');
     cards_geral.innerHTML += novaDiv;
-    cards_geral.appendChild(novaDiv);
+    //cards_geral.appendChild(novaDiv);
 
     /* -------------------------------- TAREFAS -------------------------------- */
     // Aqui  devem desenvolver uma função que é exibida na tela:
