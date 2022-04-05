@@ -4,7 +4,7 @@ let campoSenhaLogin = document.getElementById('inputPassword');
 let botaoAcessar = document.getElementById('botaoAcessar');
 
 let campoEmailLoginNormalizado;
-let campoSenhaLoginNormalizado
+let campoSenhaLoginNormalizado;
 
 //variável de controle da validação
 let emailEValido = false;
@@ -16,6 +16,39 @@ const usuarioObjeto = {
 }
 
 botaoAcessar.addEventListener('click', function(evento){
+    evento.preventDefault();
+    
+    let loginUsuario = {
+        email: "kened@teste.com",
+        password:"12345"
+    }
+
+    let loginUsuarioJson = JSON.stringify(loginUsuario);
+   
+    let endPointLogin = "https://ctd-todo-api.herokuapp.com/v1/users/login";
+    
+    let configuracaoRequisicao = {
+        method: 'POST',
+        body: loginUsuarioJson,
+        headers: {
+            'content-type': 'application/json'
+        }
+    };
+    
+    fetch (endPointLogin, configuracaoRequisicao)
+    .then(resultado=> {
+        return resultado.json();
+    })
+    .then(
+        resultado=>{
+            console.log(resultado);
+        }
+    )
+    .catch(
+        erro => {
+            console.log(erro);
+        }
+    );
 
     if (validacaoTelaDeLogin()) {
         
