@@ -11,44 +11,13 @@ let emailEValido = false;
 
 //Definindo objeto
 const usuarioObjeto = {
-    email: "",
-    senha: "",
+    email: campoEmailLogin,
+    password: campoSenhaLogin.value
 }
 
-botaoAcessar.addEventListener('click', function(evento){
-    evento.preventDefault();
-    
-    let loginUsuario = {
-        email: "kened@teste.com",
-        password:"12345"
-    }
 
-    let loginUsuarioJson = JSON.stringify(loginUsuario);
+botaoAcessar.addEventListener('click', function(evento){
    
-    let endPointLogin = "https://ctd-todo-api.herokuapp.com/v1/users/login";
-    
-    let configuracaoRequisicao = {
-        method: 'POST',
-        body: loginUsuarioJson,
-        headers: {
-            'content-type': 'application/json'
-        }
-    };
-    
-    fetch (endPointLogin, configuracaoRequisicao)
-    .then(resultado=> {
-        return resultado.json();
-    })
-    .then(
-        resultado=>{
-            console.log(resultado);
-        }
-    )
-    .catch(
-        erro => {
-            console.log(erro);
-        }
-    );
 
     if (validacaoTelaDeLogin()) {
         
@@ -59,9 +28,49 @@ botaoAcessar.addEventListener('click', function(evento){
 
         //Populando o objeto com as informações normalizadas
         usuarioObjeto.email = campoEmailLoginNormalizado;
-        usuarioObjeto.senha = campoSenhaLoginNormalizado;
+        usuarioObjeto.password = campoSenhaLoginNormalizado;
 
-        console.log(usuarioObjeto);
+        //console.log(usuarioObjeto);
+
+        evento.preventDefault();
+    
+        // let loginUsuario = {
+        //     email: "kened@teste.com",
+        //     password:"12345"
+        // }
+    
+        let loginUsuarioJson = JSON.stringify(usuarioObjeto);
+        //console.log("loginUsuarioJson"+loginUsuarioJson) ;
+        let endPointLogin = "https://ctd-todo-api.herokuapp.com/v1/users/login";
+        
+        let configuracaoRequisicao = {
+            method: 'POST',
+            body: loginUsuarioJson,
+            headers: {
+                'content-type': 'application/json'
+            }
+        };
+        
+        fetch (endPointLogin, configuracaoRequisicao)
+        .then(resultado=> {
+            //console.log(resultado);
+            return resultado.json();
+        })
+        .then(
+            resultado=>{
+                console.log(resultado);
+                if(resultado.jwt !=="Contraseña incorrecta" || resultado.jwt !== "El usuario no existe"){
+                    window.location.href = "/tarefas.html";
+                }else{
+                    throw 'Usuário ou senha Invalidos';
+                }
+            }
+        )
+        .catch(
+            erro => {
+                console.log("erro"+erro);
+            }
+        );
     } else {
         alert("Ambos os campos devem ser informados")
         evento.preventDefault(); //Não permite que o formulário seja executado / realizado o 'submit'
@@ -91,7 +100,7 @@ campoEmailLogin.addEventListener('blur', function() {
     }
 
     //Chama a função de validar, para "atualizar" o status da validação principal da tela de login
-    validacaoTelaDeLogin();
+   // validacaoTelaDeLogin();
 });
 
 function validacaoTelaDeLogin () {
