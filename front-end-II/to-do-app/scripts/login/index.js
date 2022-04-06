@@ -58,17 +58,12 @@ botaoAcessar.addEventListener('click', function(evento){
         })
         .then(
             resultado=>{
-                console.log(resultado);
-                if(resultado.jwt !=="Contraseña incorrecta" || resultado.jwt !== "El usuario no existe"){
-                    window.location.href = "/tarefas.html";
-                }else{
-                    throw 'Usuário ou senha Invalidos';
-                }
+                loginSucesso(resultado.jwt);
             }
         )
         .catch(
             erro => {
-                console.log("erro"+erro);
+                //console.log("erro"+erro);
             }
         );
     } else {
@@ -77,6 +72,12 @@ botaoAcessar.addEventListener('click', function(evento){
     }
 
 });
+function loginSucesso(jwtRecebido){
+    //console.log(jwtRecebido);
+    localStorage.setItem("jwt", jwtRecebido);
+    alert("Usuário logado com sucesso");
+    
+}
 
 //Validando o campo de Email
 campoEmailLogin.addEventListener('blur', function() {
