@@ -1,4 +1,4 @@
-# Mochila do Viajante
+# Mochila do Viajante - Certified Tech Developer
 Repositório criado para disponibilizar os conteudos abordados em toda a formação do Certified Tech Developer da Digital House - Coding School, um curso em parceria com o Mercado Livre e Globant!
 
 ![Imagem Digital House](https://github.com/k3n3dfelix/mochilaviajante/blob/main/Digital-House.jpg)
